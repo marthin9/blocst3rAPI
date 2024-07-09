@@ -43,7 +43,7 @@ class ExternalApiController extends Controller
             return response()->json([
                 'status' => 'success',
                 'message' => 'Successfully stored token',
-                'data' => $tokens
+                'data' => 'data stored'
             ]);
         } catch (\Exception $e) {
             Log::error('Exception occurred while fetching token', ['exception' => $e->getMessage()]);

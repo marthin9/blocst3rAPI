@@ -1,11 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ExternalApiController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return ['Laravel' => app()->version()];
 });
 
-Route::get('/tokens', [ExternalApiController::class, 'getTokens']);
-Route::post('/checkpoints', [ExternalApiController::class, 'getCheckpoints']);
+require __DIR__.'/auth.php';
